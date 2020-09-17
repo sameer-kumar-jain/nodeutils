@@ -1,6 +1,8 @@
 var ios = require('./modules/ios/appicons')
 var android = require('./modules/android/appicons')
 var createIcon = require('./modules/create-image')
+var pngtojpeg = require('./modules/converter/pngtojpeg')
+var jpegtopng = require('./modules/converter/jpegtopng')
 const fs = require('fs')
 
 /**
@@ -31,9 +33,9 @@ const execute = async (args) => {
         case "convert-icon-to-android":
             return await android.execute(JSON.parse(config));
         case "convert-png-to-jpeg":
-            return await createIcon.execute(JSON.parse(config));
+            return await pngtojpeg.execute(JSON.parse(config));
         case "convert-jpeg-to-png":
-            return await createIcon.execute(JSON.parse(config));
+            return await jpegtopng.execute(JSON.parse(config));
         default:
             console.log('No service found')
     }

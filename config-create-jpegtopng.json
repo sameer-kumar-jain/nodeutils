@@ -1,13 +1,6 @@
 {
-    "colors": [
-        "#111111",
-        "#FF0000"
-    ],
-    "text": "Card",
-    "textSize": 250,
-    "textColor": "#FFFFFF",
-    "output": "./icons",
-    "platforms": [
-        "jpegtopng"
-    ]
+    
+    "input":"./image.jpeg",
+    "output": "./icons"
+   
 }
