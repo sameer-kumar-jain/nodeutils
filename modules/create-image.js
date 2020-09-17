@@ -2,6 +2,8 @@ const fs = require('fs')
 const { createCanvas } = require('canvas')
 var ios = require('./ios/appicons')
 var android = require('./ios/appicons')
+var pngtojpeg = require('./imageconversion/pngtojpeg')
+var jpegtopng = require('./imageconversion/jpegtopng')
 
 module.exports = {
     execute: async ({ colors, text, textSize, textColor, output, platforms }) => {
@@ -32,9 +34,16 @@ module.exports = {
                     await ios.execute('./image.png', output);
                 case "android":
                     await android.execute('./image.png', output);
+                case "jpegtopng":
+                        await jpegtopng.execute('./image.jpeg',output);
+                        break;
+               case "pngtojpeg":
+                        await pngtojpeg.execute('./image.png', output);
+                    
+                
             }
         }))
 
         //fs.unlinkSync('./image.png')
     }
-}
+}  

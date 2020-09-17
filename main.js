@@ -30,6 +30,10 @@ const execute = async (args) => {
             return await ios.execute(JSON.parse(config));
         case "convert-icon-to-android":
             return await android.execute(JSON.parse(config));
+        case "convert-png-to-jpeg":
+            return await createIcon.execute(JSON.parse(config));
+        case "convert-jpeg-to-png":
+            return await createIcon.execute(JSON.parse(config));
         default:
             console.log('No service found')
     }
